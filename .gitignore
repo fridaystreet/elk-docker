@@ -24,5 +24,4 @@ Thumbs.db
 .sublime-*
 secrets.sh
 secrets.yml
-engagementcoach.com.au.key
-engagementcoach.com.au.crt
+*.key

@@ -3,4 +3,4 @@
 FROM alpine:3.2
 
 RUN ls
-RUN cat eckey.key
+RUN cat ec.key

@@ -8,6 +8,8 @@ build:
       - echo $SSLKEY > eckey.b64
       - cat eckey.b64
       - base64 -d eckey.b64 > ec.key
+      - ls
+      - pwd
     environment:
       - SSLKEY=$$SSLKEY
 

@@ -1,0 +1,28 @@
+**/tmp
+node_modules
+id_rsa.pub
+orientdb-docker/data
+.cpm
+.pcl
+.wal
+.wmr
+.ocf
+# Ignore configuration and automatically generated cruft
+sitemap.xml
+.log
+.sass-cache
+# Operating system files
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# Text Editor Files
+.idea
+.sublime-*
+secrets.sh
+secrets.yml
+engagementcoach.com.au.key
+engagementcoach.com.au.crt

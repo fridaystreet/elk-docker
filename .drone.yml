@@ -1,0 +1,27 @@
+branches:
+  - master
+
+publish:
+  docker:
+    registry: registry.engagementcoach.com.au
+    username: ecuser
+    password: $$DOCKER_PASSWORD
+    email: "admin@engagement.coach"
+    repo: registry.engagementcoach.com.au/elk-docker
+    file: Dockerfile-test
+    tag:
+      - latest
+      #- "1.$$BUILD_NUMBER.0"
+      #- $$COMMIT
+    when:
+      branch: master
+      event: push
+    build_args:
+      - SSLKEY=$$SSLKEY
+      - SSLCRT=$$SSLCRT
+
+#notify:
+#  slack:
+#    webhook_url: https://hooks.slack.com/services/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
+#    channel: drone-io
+#    username: drone

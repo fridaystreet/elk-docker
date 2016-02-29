@@ -1,24 +1,14 @@
 branches:
   - master
 
-publish:
-  docker:
-    registry: registry.engagementcoach.com.au
-    username: ecuser
-    password: $$DOCKER_PASSWORD
-    email: "admin@engagement.coach"
-    repo: registry.engagementcoach.com.au/elk-docker
-    file: Dockerfile-test
-    tag:
-      - latest
-      #- "1.$$BUILD_NUMBER.0"
-      #- $$COMMIT
-    when:
-      branch: master
-      event: push
-    build_args:
+build:
+  ember-staging:
+    image: alpine:3.2
+    commands:
+      - echo $SSLKEY > eckey.key
+      - cat eckey.key
+    environment:
       - SSLKEY=$$SSLKEY
-      - SSLCRT=$$SSLCRT
 
 #notify:
 #  slack:

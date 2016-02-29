@@ -2,5 +2,5 @@
 
 FROM alpine:3.2
 
-RUN ls
-RUN cat ec.key
+ADD ec.key /tmp/ec.key
+RUN cat /tmp/ec.key

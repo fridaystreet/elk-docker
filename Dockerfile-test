@@ -1,6 +1,0 @@
-# Dockerfile for ELK stack
-
-FROM alpine:3.2
-
-ADD ec.key /tmp/ec.key
-RUN cat /tmp/ec.key

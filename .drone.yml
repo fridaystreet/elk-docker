@@ -5,12 +5,13 @@ build:
   ssl-key:
     image: alpine:3.2
     commands:
-      - echo $SSLKEY > eckey.b64
-      - cat eckey.b64
-      - base64 -d eckey.b64 > ec.key
-      - cat ec.key
+      - echo $SSLKEY > ecb64.key
+      - base64 -d ecb64.key > ec.key
+      - echo $SSLCRT > ecb64.crt
+      - base64 -d ecb64.crt > ec.crt
     environment:
       - SSLKEY=$$SSLKEY
+      - SSLCRT=$$SSLCRT
 
 publish:
   docker:
@@ -19,7 +20,7 @@ publish:
     password: $$DOCKER_PASSWORD
     email: "admin@engagement.coach"
     repo: registry.engagementcoach.com.au/elk-docker
-    file: Dockerfile-test
+    file: Dockerfile-ec
     tag:
       - latest
       #- "1.$$BUILD_NUMBER.0"

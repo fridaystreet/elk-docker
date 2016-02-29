@@ -12,6 +12,9 @@ build:
     environment:
       - SSLKEY=$$SSLKEY
       - SSLCRT=$$SSLCRT
+    when:
+      branch: master
+      event: push
 
 publish:
   docker:
